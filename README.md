@@ -17,6 +17,6 @@ For `LaTeX` font rendering of `matplotlib` figures, under `Ubuntu 20.04`:
 $ sudo apt install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 ```
 
-![alt text](laser_density.png)
+![alt text](Laguerre_Gaussian_mode2.png)
 
 # Laguerre_Gaussian
