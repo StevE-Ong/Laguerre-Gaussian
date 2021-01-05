@@ -23,8 +23,6 @@ a0 = 2.4   # Laser amplitude
 tau = 25.0e-15 / 2.354820045 # Laser duration
 w0 = 22.0e-6 / 1.17741 # Laser waist
 lambda0 = 0.8e-6 # Laser wavelength
-print(lambda0)
-
 
 # +
 def Laguerre_mode(n,X):
@@ -68,7 +66,6 @@ z = np.linspace(0,50e-6,256)
 X, Z = np.meshgrid(x,z)
 extent = np.min(X*1e6), np.max(X*1e6), np.min(Z*1e6), np.max(Z*1e6)
 Intensity = a0*LaguerreBeam(2,X,Z,y_focused=150e-6,xinit=25e-6)**2
-print(np.max(Intensity))
 
 fig, ax = plt.subplots()
 
@@ -103,7 +100,6 @@ img2 = ax.contour(
     Intensity,
     levels=[0.135*np.max(Intensity),0.5*np.max(Intensity)],
     colors="black",
-    label="$d_\mathrm{FWHM}$",
 )
 ax.clabel(img2, inline=1)
 # add watermark
@@ -115,11 +111,11 @@ ax.text(0.5, 0.5, 'LGED preliminary', transform=ax.transAxes,
 ax.set_ylabel("$z \;(\mu \mathrm{m} )$")
 ax.set_xlabel("$x \;(\mu \mathrm{m} )$")
 ax.minorticks_on()
-plt.show()
+#plt.show()
 # -
 
 fig.savefig(
-    rf"Laguerre_Gaissian_mode{LAGUERREMODES.shape[0]-1}.png",
+    rf"Laguerre_Gaussian_mode{LAGUERREMODES.shape[0]-1}.png",
     dpi=600,
     transparent=False,
     bbox_inches="tight",
